@@ -1,1 +1,4 @@
+com/example/App.class
+com/example/controller/ProductController.class
 com/example/service/ProductService.class
+com/example/model/Product.class

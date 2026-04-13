@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductService {
 
     private List<Product> products = new ArrayList<>();
@@ -46,6 +48,12 @@ public class ProductService {
         return products.stream()
                 .filter(p -> p.getId().equals(id))
                 .map(Product::getName)
+                .findFirst();
+    }
+
+    public Optional<Product> getProductById(Long id) {
+        return products.stream()
+                .filter(p -> p.getId().equals(id))
                 .findFirst();
     }
     
