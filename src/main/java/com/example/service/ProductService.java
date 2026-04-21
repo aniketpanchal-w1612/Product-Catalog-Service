@@ -60,4 +60,11 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return new ArrayList<>(products);
     }
+
+    public Product addProduct(Product product){
+        long newId  = products.size()+1;
+        product.setId(newId);
+        products.add(product);
+        return product;
+    }
 }
